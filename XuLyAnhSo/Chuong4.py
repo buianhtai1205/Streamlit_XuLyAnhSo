@@ -7,8 +7,8 @@ def Spectrum(imgin):
     M, N = imgin.shape
     P = cv2.getOptimalDFTSize(M)
     Q = cv2.getOptimalDFTSize(N)
-    f = np.zeros((P,Q), np.float)
-    f[0:M,0:N] = imgin.astype(np.float)/(L-1)
+    f = np.zeros((P,Q), np.float64)
+    f[0:M,0:N] = imgin.astype(np.float64)/(L-1)
     F = cv2.dft(f, flags = cv2.DFT_COMPLEX_OUTPUT)
     F = np.fft.fftshift(F)
     S = cv2.magnitude(F[:,:,0],F[:,:,1])
@@ -22,7 +22,7 @@ def FrequencyFilter(imgin):
     M, N = imgin.shape
     P = cv2.getOptimalDFTSize(M)
     Q = cv2.getOptimalDFTSize(N)
-    f = np.zeros((P,Q), np.float)
+    f = np.zeros((P,Q), np.float64)
     f[0:M,0:N] = imgin
 
     # Buoc 2: Tinh DFT
@@ -31,7 +31,7 @@ def FrequencyFilter(imgin):
     F = np.fft.fftshift(F)
 
     # Buoc 4: Tao bo loc H
-    H = np.zeros((P,Q,2), np.float)
+    H = np.zeros((P,Q,2), np.float64)
     n = 2
     D0 = 60
     for u in range(0, P):
@@ -67,7 +67,7 @@ def DrawFilter(imgin):
 
     D0 = 15
     n = 2
-    H = np.zeros((P,Q,2), np.float)
+    H = np.zeros((P,Q,2), np.float64)
     for u in range(0, P):
         for v in range(0, Q):
             # u1, v1
@@ -134,7 +134,7 @@ def NotchRejectFilter(P, Q):
 
     D0 = 15
     n = 2
-    H = np.zeros((P,Q,2), np.float)
+    H = np.zeros((P,Q,2), np.float64)
     for u in range(0, P):
         for v in range(0, Q):
             # u1, v1
@@ -193,7 +193,7 @@ def RemoveMoire(imgin):
     M, N = imgin.shape
     P = cv2.getOptimalDFTSize(M)
     Q = cv2.getOptimalDFTSize(N)
-    f = np.zeros((P,Q), np.float)
+    f = np.zeros((P,Q), np.float64)
     f[0:M,0:N] = imgin
 
     # Buoc 2: Tinh DFT
