@@ -1,6 +1,5 @@
 from subprocess import call
 
-
 def open_my_file(fileOpen):
     call(["python", fileOpen])
 
