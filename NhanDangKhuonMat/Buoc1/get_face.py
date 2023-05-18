@@ -54,13 +54,13 @@ def runGetFace():
 
     tm = cv.TickMeter()
 
-    cap = cv.VideoCapture(2)
+    cap = cv.VideoCapture(0)
     frameWidth = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
     frameHeight = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
     detector.setInputSize([frameWidth, frameHeight])
 
     dem = 0
-    while True:
+    while cap.isOpened():
         hasFrame, frame = cap.read()
         if not hasFrame:
             print('No frames grabbed!')
