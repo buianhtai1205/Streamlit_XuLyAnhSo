@@ -59,7 +59,7 @@ def runPredict():
 
     tm = cv.TickMeter()
 
-    cap = cv.VideoCapture(-1)
+    cap = cv.VideoCapture(1)
     frameWidth = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
     frameHeight = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
     detector.setInputSize([frameWidth, frameHeight])
