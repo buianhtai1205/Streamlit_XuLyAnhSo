@@ -1,9 +1,9 @@
 import numpy as np
 import cv2
 import streamlit as st
-import XuLyAnhSo.Chuong3 as chuong3
-import XuLyAnhSo.Chuong4 as chuong4
-import XuLyAnhSo.Chuong9 as chuong9
+import Chuong3 as chuong3
+import Chuong4 as chuong4
+import Chuong9 as chuong9
 
 # Thiết lập hàm xử lý ảnh chương 3
 def XuLyAnh_Chuong3(name_type, image_in):
