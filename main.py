@@ -1,6 +1,9 @@
-from subprocess import  call
+from subprocess import call
+
+
 def open_my_file(fileOpen):
     call(["python", fileOpen])
+
 
 import streamlit as st
 from streamlit_option_menu import option_menu
@@ -10,17 +13,18 @@ import NhanDangKhuonMat.Buoc3.predict as predict
 
 import XuLyAnhSo.XyLyAnh as xulyanh
 
+
 class Main():
     def __init__(self):
         self.initUI()
 
     def initUI(self):
         with st.sidebar:
-            st.sidebar.header="Menu"
+            st.sidebar.header = "Menu"
             selected = option_menu("Main Menu", ["Nhận dạng khuôn mặt", "Xử lý hình ảnh", "Nhận dạng hình ảnh"],
-                icons=['bookmark-star', 'apple', 'star'], menu_icon="grid-1x2-fill", default_index=0)
+                                   icons=['bookmark-star', 'apple', 'star'], menu_icon="grid-1x2-fill", default_index=0)
 
-        if selected=="Nhận dạng khuôn mặt":
+        if selected == "Nhận dạng khuôn mặt":
             st.title("Nhận dạng khuôn mặt")
             col1, col2 = st.columns([0.5, 0.5], gap="large")
             with col1:
@@ -42,7 +46,7 @@ class Main():
                 if option == "Nhận dạng khuôn mặt":
                     predict.runPredict()
 
-        if selected=="Xử lý hình ảnh":
+        if selected == "Xử lý hình ảnh":
             # Chọn thông tin file image
             uploaded_files = st.sidebar.file_uploader("Chọn file image", type=['csv', 'png', 'tif', 'jpg'])
             # Gọi hàm thực thi xử lý tính năng
