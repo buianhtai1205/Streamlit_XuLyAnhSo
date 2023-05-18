@@ -67,7 +67,7 @@ def Histogram(imgin, imgout):
             r = imgin[x, y]
             h[r] = h[r] + 1
 
-    p = np.zeros(L, np.float)
+    p = np.zeros(L, np.float64)
     for r in range(0, L):
         p[r] = h[r]/(M*N)
 
