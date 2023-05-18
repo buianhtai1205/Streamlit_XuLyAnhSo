@@ -339,7 +339,7 @@ def XuLyUploadFile(uploaded_files):
         # Kiểm tra nếu selectbox value là "Chương 3"
         if menu_item == 'Chương 3':
             # Thiết lập image_in
-            filepath = 'D:/UTE\XLA\Streamlit_XuLyAnhSo_CuoiKy\XuLyAnhSo\HinhAnh\Chuong3\\' + uploaded_files.name
+            filepath = 'XuLyAnhSo\HinhAnh\Chuong3\\' + uploaded_files.name
             image_in = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)
 
             # Thiết lập menu phương thức xử lý ảnh
@@ -381,7 +381,7 @@ def XuLyUploadFile(uploaded_files):
 
         elif menu_item == 'Chương 4':
             # Thiết lập image_in
-            filepath = 'D:/UTE\XLA\Streamlit_XuLyAnhSo_CuoiKy\XuLyAnhSo\HinhAnh\Chuong4\\' + uploaded_files.name
+            filepath = 'XuLyAnhSo\HinhAnh\Chuong4\\' + uploaded_files.name
             image_in = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)
 
             # Thiết lập menu phương thức xử lý ảnh
@@ -400,7 +400,7 @@ def XuLyUploadFile(uploaded_files):
 
         elif menu_item == 'Chương 9':
             # Thiết lập image_in
-            filepath = 'D:/UTE\XLA\Streamlit_XuLyAnhSo_CuoiKy\XuLyAnhSo\HinhAnh\Chuong9\\' + uploaded_files.name
+            filepath = 'XuLyAnhSo\HinhAnh\Chuong9\\' + uploaded_files.name
             image_in = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)
 
             # Thiết lập menu phương thức xử lý ảnh
