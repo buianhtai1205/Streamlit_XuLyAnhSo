@@ -12,6 +12,7 @@ import NhanDangKhuonMat.Buoc3.predict as predict
 
 import XuLyAnhSo.XyLyAnh as xulyanh
 
+import NhanDangTraiCay.detect as detectFruit
 
 class Main():
     def __init__(self):
@@ -20,7 +21,7 @@ class Main():
     def initUI(self):
         with st.sidebar:
             st.sidebar.header = "Menu"
-            selected = option_menu("Main Menu", ["Nhận dạng khuôn mặt", "Xử lý hình ảnh", "Nhận dạng hình ảnh"],
+            selected = option_menu("Main Menu", ["Nhận dạng khuôn mặt", "Xử lý hình ảnh", "Nhận dạng trái cây"],
                                    icons=['bookmark-star', 'apple', 'star'], menu_icon="grid-1x2-fill", default_index=0)
 
         if selected == "Nhận dạng khuôn mặt":
@@ -51,5 +52,8 @@ class Main():
             # Gọi hàm thực thi xử lý tính năng
             xulyanh.XuLyUploadFile(uploaded_files)
 
+        if selected == "Nhận dạng trái cây":
+            model = detectFruit.load_model()
+            detectFruit.main(model)
 
 p = Main()
